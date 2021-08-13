@@ -47,7 +47,7 @@ void insert(int k, int pos)
     }
     else
     {
-        for (int i = arr.length; i >= pos; i--)
+        for (int i = arr.size - 2; i >= pos; i--)
         {
             arr.p[i + 1] = arr.p[i];
         }
@@ -56,18 +56,42 @@ void insert(int k, int pos)
         arr.length++;
     }
 }
-// void del()
-// {
-// }
-// void del(int x, int pos)
-// {
-// }
+
+void del()
+{
+    if (arr.length = 0)
+    {
+        cout << "array is empty" << endl;
+        return;
+    }
+    int i = arr.size - 1;
+    while (arr.p[i] == '\0')
+    {
+        i--;
+    }
+    cout << "deleted element " << arr.p[i] << " pos :" << i + 1 << endl;
+    arr.p[i] = '\0';
+    arr.length--;
+}
+
+void del(int pos)
+{
+    if (arr.p[pos - 1] == '\0')
+    {
+        cout << "index already empty" << endl;
+        return;
+    }
+    cout << "deleted element " << arr.p[pos - 1] << " pos :" << pos << endl;
+    arr.p[pos - 1] == '\0';
+    arr.length--;
+}
 
 void display()
 {
     if (arr.length == 0)
     {
         cout << "the array is empty" << endl;
+        return;
     }
     else
     {
@@ -75,7 +99,7 @@ void display()
         {
             if (arr.p[i] != '\0')
             {
-                cout << arr.p[i] << endl;
+                cout << arr.p[i] << " :" << i + 1 << endl;
             }
         }
     }
@@ -87,6 +111,9 @@ int main()
     insert(10);
     insert(20);
     insert(30, 5);
+    display();
+    del();
+    del(10);
     display();
     return 0;
 }
