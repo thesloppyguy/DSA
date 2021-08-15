@@ -56,10 +56,6 @@ int main()
     set_matrix(m, 5, 5, 6);
     get_matrix(m, 4, 4);
     get_matrix(m, 4, 5);
-    for (int i = 0; i < m->n; i++)
-    {
-        cout << m->a[i] << endl;
-    }
     display(m);
     return 0;
 }
